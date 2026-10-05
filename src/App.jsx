@@ -7,6 +7,7 @@ import Experience from './components/Experience.jsx';
 import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import PortfolioChatbot from './components/PortfolioChatbot.jsx';
 
 export const NAV_ITEMS = [
   { id: 'home', label: 'Home' },
@@ -35,6 +36,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <PortfolioChatbot />
     </>
   );
 }

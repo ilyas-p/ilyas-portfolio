@@ -3,7 +3,7 @@ export const profile = {
   title: 'Python Full Stack Developer',
   email: 'pmilyas000@gmail.com',
   phone: '+91 9786832483',
-  linkedin: 'https://linkedin.com/in/mohammed-ilyas',
+  linkedin: 'https://www.linkedin.com/in/mohammed-ilyas-04a6282b1?',
   location: 'Trivandrum',
 };
 

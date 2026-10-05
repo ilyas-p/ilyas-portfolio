@@ -18,7 +18,12 @@ function Contact() {
           </p>
 
           <div className="contact-cta-row">
-            <a href={`mailto:${profile.email}`} className="btn btn-primary">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=pmilyas000@gmail.com&su=Portfolio%20Contact"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="btn btn-primary"
+            >
               Get in Touch
             </a>
             <a
