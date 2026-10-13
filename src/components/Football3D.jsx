@@ -1,20 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion.js';
+import { useReducedMotionPref } from '../hooks/useMedia.js';
 
-function readThemeColors() {
-  const styles = getComputedStyle(document.documentElement);
-  return {
-    accent: styles.getPropertyValue('--accent').trim() || '#b9ff65',
-    accent2: styles.getPropertyValue('--accent-2').trim() || '#8a7cff',
-    border: styles.getPropertyValue('--border').trim() || '#272a32',
-  };
-}
-
-function Football3D() {
+function Football3D({ accent = '#46e3a8', accent2 = '#f4f1ec', line = '#6d6c75' }) {
   const containerRef = useRef(null);
   const [supported, setSupported] = useState(true);
-  const reducedMotion = usePrefersReducedMotion();
+  const reducedMotion = useReducedMotionPref();
 
   useEffect(() => {
     const container = containerRef.current;
@@ -32,7 +23,7 @@ function Football3D() {
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
     camera.position.set(0, 1.1, 5.2);
 
-    const colors = readThemeColors();
+    const colors = { accent, accent2, border: line };
 
     // Goal frame — simple low-poly wireframe box edges
     const goalGeo = new THREE.BoxGeometry(3.4, 1.9, 1.1);
@@ -82,18 +73,9 @@ function Football3D() {
     };
     animate();
 
-    const themeObserver = new MutationObserver(() => {
-      const next = readThemeColors();
-      goalMat.color.set(next.border);
-      ballMat.color.set(next.accent);
-      ballCoreMat.color.set(next.accent2);
-    });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
     return () => {
       cancelAnimationFrame(frameId);
       resizeObserver.disconnect();
-      themeObserver.disconnect();
       goalGeo.dispose();
       goalEdges.dispose();
       goalMat.dispose();
@@ -105,17 +87,15 @@ function Football3D() {
         container.removeChild(renderer.domElement);
       }
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, accent, accent2, line]);
 
   if (!supported) {
     return (
-      <div className="visual-code" role="img" aria-label="Stylised goal and football illustration">
-        <p className="code-line">// 3D preview unavailable — WebGL not supported</p>
-      </div>
+      <p className="absolute inset-0 flex items-center justify-center text-sm text-mist">3D preview unavailable — WebGL not supported</p>
     );
   }
 
-  return <div className="visual-3d" ref={containerRef} role="img" aria-label="Rotating 3D football in front of a goal frame" />;
+  return <div className="absolute inset-y-0 right-0 w-full sm:w-[62%]" ref={containerRef} role="img" aria-label="Rotating 3D football in front of a goal frame" />;
 }
 
 export default Football3D;

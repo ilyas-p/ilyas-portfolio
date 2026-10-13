@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import {
-  Bot,
   Send,
   X,
   Sparkles,
   ArrowUpRight,
-  MessageCircle,
 } from 'lucide-react';
 
 import { profile } from '../data/profile.js';
@@ -175,7 +173,7 @@ function PortfolioChatbot() {
           onClick={() => setIsOpen(true)}
           aria-label="Open Ilyas Assistant"
         >
-          <MessageCircle size={23} />
+          <img src="/assets/mini-me.webp" alt="" className="portfolio-chatbot-mini" width="58" height="58" />
 
           <span className="portfolio-chatbot-launcher-dot" />
         </button>
@@ -194,7 +192,7 @@ function PortfolioChatbot() {
         <div className="portfolio-chatbot-brand">
 
           <div className="portfolio-chatbot-brand-icon">
-            <Bot size={18} />
+            <img src="/assets/mini-me.webp" alt="" className="portfolio-chatbot-mini" width="40" height="40" />
           </div>
 
           <div>
@@ -221,7 +219,7 @@ function PortfolioChatbot() {
 
       {/* CHAT BODY */}
 
-      <div className="portfolio-chatbot-body">
+      <div className="portfolio-chatbot-body" data-lenis-prevent>
         <div className="portfolio-chat-welcome">
           <h4>How can I help you?</h4>
         </div>

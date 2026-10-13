@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#08090C"/>
-  <text x="32" y="42" font-family="'IBM Plex Mono', monospace" font-size="26" font-weight="500" fill="#B9FF65" text-anchor="middle">MI</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#07070a"/><g fill="none" stroke="#e5132b" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 46 V18 L23 34 L36 18 V46"/><path d="M50 18 V46"/></g></svg>

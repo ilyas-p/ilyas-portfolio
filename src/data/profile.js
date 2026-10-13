@@ -1,10 +1,13 @@
 export const profile = {
   name: 'Mohammed Ilyas P',
-  title: 'Python Full Stack Developer',
+  title: 'Python Full-Stack Developer',
   email: 'pmilyas000@gmail.com',
   phone: '+91 9786832483',
-  linkedin: 'https://www.linkedin.com/in/mohammed-ilyas-04a6282b1?',
+  linkedin: 'https://www.linkedin.com/in/mohammed-ilyas-04a6282b1',
+  github: 'https://github.com/ilyas-p',
   location: 'Trivandrum',
+  languages: ['Tamil', 'English'],
+  resumeUrl: '/resume.pdf',
 };
 
 export const education = [
@@ -45,3 +48,16 @@ export const experience = {
 export const certification = {
   name: 'Cloud Computing',
 };
+
+// About-me copy (from the original About section).
+export const summary =
+  'I’m an aspiring MCA student with hands-on experience in Python full-stack development. I enjoy creating software that combines clean interfaces, practical backend systems, and engaging user experiences.';
+
+export const intro =
+  'I design and build full-stack web applications — from Django e-commerce systems to AI-assisted learning tools and interactive 3D experiences — with a focus on clean interfaces and dependable backends.';
+
+export const focusAreas = [
+  { title: 'Build', body: 'Practical web applications' },
+  { title: 'Explore', body: 'AI & 3D experiences' },
+  { title: 'Learn', body: 'New technologies' },
+];
